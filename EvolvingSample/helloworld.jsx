@@ -8,7 +8,7 @@ var FirstName = React.createClass({
            <div>
                 <strong>First name: </strong> 
                 <input type="text" placeholder="First name" value={this.props.value} ref="nameInput" onChange={this.handleChange} />
-           </div>  
+           </div>
        );
    }
 });
@@ -48,14 +48,12 @@ var PersonName = React.createClass({
     
     handleInputFirstName: function(firstName) {
       this.setState({
-            firstName: firstName, 
-            lastName: this.state.lastName 
+            firstName: firstName 
         });
       },
     
     handleInputLastName: function(lastName) {
-      this.setState({
-            firstName: this.state.firstName, 
+      this.setState({ 
             lastName: lastName 
         });
     },
@@ -66,7 +64,7 @@ var PersonName = React.createClass({
                 <FirstName value={this.state.firstName} onUserInput={this.handleInputFirstName} />
                 <LastName value={this.state.lastName} onUserInput={this.handleInputLastName} />
                 <FullName person={this.state} />
-            </div>          
+            </div>   
         );
     } 
 });
