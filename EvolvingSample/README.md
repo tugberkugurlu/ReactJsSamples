@@ -2,7 +2,7 @@
 
  - [x] Init
  - [x] Hello World
- - [ ] First Name, Last Name in text input, full name written into a span.
+ - [x] First Name, Last Name in text input, full name written into a span.
  - [ ] Show list of people
  - [ ] make an HTTP request to get list of people from the server and hook it to above
  - [ ] Remove a person from the list

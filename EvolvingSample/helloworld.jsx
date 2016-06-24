@@ -73,5 +73,5 @@ var PersonName = React.createClass({
 
 ReactDOM.render(
     <PersonName />,
-    document.getElementById('container')
+    document.getElementById('hello-world')
 );
