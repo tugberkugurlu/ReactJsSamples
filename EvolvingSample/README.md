@@ -17,3 +17,4 @@
  - [React with Package Management](https://facebook.github.io/react/docs/package-management.html)
  - [React Tutorial](https://facebook.github.io/react/docs/tutorial.html)
  - [React Developer Tools](https://facebook.github.io/react/blog/2015/09/02/new-react-developer-tools.html)
+ - [Getting started with npm and Browserify in a React project](http://codeutopia.net/blog/2016/01/25/getting-started-with-npm-and-browserify-in-a-react-project/)
