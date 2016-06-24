@@ -8,7 +8,28 @@ var FirstName = React.createClass({
    }
 });
 
+var LastName = React.createClass({
+   render: function() {
+       return (
+           <div>
+                <strong>Last name: </strong> <input type="text" placeholder="Last name" />
+           </div>  
+       );
+   }
+});
+
+var PersonName = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <FirstName />
+                <LastName />
+            </div>          
+        );
+    } 
+});
+
 ReactDOM.render(
-    <FirstName />,
+    <PersonName />,
     document.getElementById('container')
 );
