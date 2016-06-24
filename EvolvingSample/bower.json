@@ -1,0 +1,21 @@
+{
+  "name": "EvolvingSample",
+  "authors": [
+    "Tugberk Ugurlu"
+  ],
+  "description": "Evolving sample to see how React functions",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.1.0"
+  }
+}
