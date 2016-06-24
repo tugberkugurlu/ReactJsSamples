@@ -1,4 +1,14 @@
+var FirstName = React.createClass({
+   render: function() {
+       return (
+           <div>
+                <strong>First name: </strong> <input type="text" placeholder="First name" />
+           </div>  
+       );
+   }
+});
+
 ReactDOM.render(
-    <h1>Hello World</h1>,
-    document.getElementById('example')
+    <FirstName />,
+    document.getElementById('container')
 );
