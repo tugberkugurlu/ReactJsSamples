@@ -3,16 +3,17 @@
  - [x] Init
  - [x] Hello World
  - [x] First Name, Last Name in text input, full name written into a span.
- - [ ] Show list of people
- - [ ] make an HTTP request to get list of people from the server and hook it to above
- - [ ] Remove a person from the list
- - [ ] make an http request to server to remove that person from that list, too
- - [ ] Add a person to list and make http request to server to add that person to list
- - [ ] /people/{personid} to show the details of a person
- - [ ] Make server load slowly, have a loading indicator during load
- - [ ] Put the current user details on header which will appear on every page
+ - [ ] Show list of products
+ - [ ] make an HTTP request to get list of products from the server and hook it to above
+ - [ ] Remove a product from the list
+ - [ ] make an http request to server to remove that product from that list, too
+ - [ ] Add a product to list and make http request to server to add that product to list
+ - [ ] /products/{productid} to show the details of that product
+ - [ ] Make server load slowly, have a loading indicator during the loading process
 
 ## Resources
 
  - [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+ - [React with Package Management](https://facebook.github.io/react/docs/package-management.html)
+ - [React Tutorial](https://facebook.github.io/react/docs/tutorial.html)
  - [React Developer Tools](https://facebook.github.io/react/blog/2015/09/02/new-react-developer-tools.html)
