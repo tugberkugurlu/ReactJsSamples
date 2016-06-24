@@ -3,7 +3,7 @@
  - [x] Init
  - [x] Hello World
  - [x] First Name, Last Name in text input, full name written into a span.
- - [ ] Show list of products
+ - [x] Show list of products
  - [ ] make an HTTP request to get list of products from the server and hook it to above
  - [ ] Remove a product from the list
  - [ ] make an http request to server to remove that product from that list, too
