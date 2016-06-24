@@ -18,14 +18,20 @@ var ProductRow = React.createClass({
 });
 
 var ProductsTable = React.createClass({
+    getInitialState: function() {
+        return { products: this.props.products };
+    },
+    
     removeProduct: function(productNameToRemove) {
-        console.log(productNameToRemove);
+        // TODO: Find the correct item to remove
+        var updatedProducts = this.state.products.slice(1);
+        this.setState({ products: updatedProducts });
     },
     
     render: function() {
         var rows = [];
         
-        this.props.products.forEach(function(product) {
+        this.state.products.forEach(function(product) {
             rows.push(<ProductRow product={product} onRemoveProduct={this.removeProduct} key={product.name} />) 
         }.bind(this));
         
