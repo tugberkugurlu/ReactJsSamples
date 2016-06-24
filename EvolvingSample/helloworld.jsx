@@ -69,8 +69,6 @@ var PersonName = React.createClass({
     } 
 });
 
-//var person = { firstName: '', lastName: '' };
-
 ReactDOM.render(
     <PersonName />,
     document.getElementById('hello-world')
