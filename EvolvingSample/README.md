@@ -11,3 +11,8 @@
  - [ ] /people/{personid} to show the details of a person
  - [ ] Make server load slowly, have a loading indicator during load
  - [ ] Put the current user details on header which will appear on every page
+
+## Resources
+
+ - [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+ - [React Developer Tools](https://facebook.github.io/react/blog/2015/09/02/new-react-developer-tools.html)
