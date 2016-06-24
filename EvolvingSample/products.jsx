@@ -1,24 +1,48 @@
+var ProductRow = React.createClass({
+    
+    handleRemove: function() {
+        console.log(this.probs);
+        // this.probs.onRemoveProduct(this.props.product.name);
+    },
+    
+    render: function() {
+        return (
+            <tr>
+                <td>{this.props.product.name}</td>
+                <td>{this.props.product.price}</td>
+                <td>
+                    <a href="#" onClick={this.handleRemove}>X</a>
+                </td>
+            </tr>
+        );
+    } 
+});
+
 var ProductsTable = React.createClass({
+    removeProduct: function(productNameToRemove) {
+        console.log(productNameToRemove);
+    },
+    
     render: function() {
         var rows = [];
         
         this.props.products.forEach(function(product) {
-            rows.push(<tr key={product.name}> 
-                <td>{product.name}</td> 
-                <td>{product.price}</td> 
-            </tr>) 
-        });
+            rows.push(<ProductRow product={product} onRemoveProduct={this.removeProduct} key={product.name} />) 
+        }.bind(this));
         
         return (
-            <table>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-                </thead>
-                <tbody>{rows}</tbody>
-            </table>
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>{rows}</tbody>
+                </table>
+            </div>
         );
     }
 });
