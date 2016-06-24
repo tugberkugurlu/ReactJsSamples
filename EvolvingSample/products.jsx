@@ -1,8 +1,7 @@
 var ProductRow = React.createClass({
     
     handleRemove: function() {
-        console.log(this.probs);
-        // this.probs.onRemoveProduct(this.props.product.name);
+        this.props.onRemoveProduct(this.props.product.name);
     },
     
     render: function() {
