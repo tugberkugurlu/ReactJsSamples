@@ -1,18 +1,28 @@
 var FirstName = React.createClass({
+   handleChange: function() {
+       this.props.onUserInput(this.refs.nameInput.value);
+   }, 
+    
    render: function() {
        return (
            <div>
-                <strong>First name: </strong> <input type="text" placeholder="First name" value={this.props.value} />
+                <strong>First name: </strong> 
+                <input type="text" placeholder="First name" value={this.props.value} ref="nameInput" onChange={this.handleChange} />
            </div>  
        );
    }
 });
 
 var LastName = React.createClass({
+   handleChange: function() {
+       this.props.onUserInput(this.refs.nameInput.value);
+   },
+   
    render: function() {
        return (
            <div>
-                <strong>Last name: </strong> <input type="text" placeholder="Last name" value={this.props.value} />
+                <strong>Last name: </strong> 
+                <input type="text" placeholder="Last name" value={this.props.value} ref="nameInput" onChange={this.handleChange} />
            </div>  
        );
    }
@@ -29,20 +39,41 @@ var FullName = React.createClass({
 });
 
 var PersonName = React.createClass({
+    getInitialState: function() {
+        return {
+            firstName: '', 
+            lastName: ''
+        }
+    },
+    
+    handleInputFirstName: function(firstName) {
+      this.setState({
+            firstName: firstName, 
+            lastName: this.state.lastName 
+        });
+      },
+    
+    handleInputLastName: function(lastName) {
+      this.setState({
+            firstName: this.state.firstName, 
+            lastName: lastName 
+        });
+    },
+    
     render: function() {
         return (
             <div>
-                <FirstName value={this.props.person.firstName} />
-                <LastName value={this.props.person.lastName} />
-                <FullName person={this.props.person} />
+                <FirstName value={this.state.firstName} onUserInput={this.handleInputFirstName} />
+                <LastName value={this.state.lastName} onUserInput={this.handleInputLastName} />
+                <FullName person={this.state} />
             </div>          
         );
     } 
 });
 
-var person = { firstName: '', lastName: '' };
+//var person = { firstName: '', lastName: '' };
 
 ReactDOM.render(
-    <PersonName person={person} />,
+    <PersonName />,
     document.getElementById('container')
 );
