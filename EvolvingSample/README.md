@@ -5,7 +5,7 @@
  - [x] First Name, Last Name in text input, full name written into a span.
  - [x] Show list of products
  - [ ] make an HTTP request to get list of products from the server and hook it to above
- - [ ] Remove a product from the list
+ - [x] Remove a product from the list
  - [ ] make an http request to server to remove that product from that list, too
  - [ ] Add a product to list and make http request to server to add that product to list
  - [ ] /products/{productid} to show the details of that product

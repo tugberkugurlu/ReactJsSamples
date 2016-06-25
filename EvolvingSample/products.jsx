@@ -23,9 +23,11 @@ var ProductsTable = React.createClass({
     },
     
     removeProduct: function(productNameToRemove) {
-        // TODO: Find the correct item to remove
-        var updatedProducts = this.state.products.slice(1);
-        this.setState({ products: updatedProducts });
+        this.setState({
+            products: _.filter(this.state.products, function(product) {
+                return product.name !== productNameToRemove;
+            })
+        });
     },
     
     render: function() {
