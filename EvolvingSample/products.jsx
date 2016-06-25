@@ -1,3 +1,39 @@
+var ProductForm = React.createClass({
+    getInitialState: function() {
+        return {
+            category: '', 
+            price: '', 
+            stocked: false, 
+            name: ''            
+        }
+    },
+    add: function() {
+        this.props.onProductAdded({
+            category: this.refs.category.value, 
+            price: this.refs.price.value, 
+            stocked: this.refs.stocked.value, 
+            name: this.refs.name.value
+        });
+    },
+    
+    render: function() {
+        return (
+            <div>
+                <h2>Add Product</h2>
+                
+                <div>Name: <input type="text" value={this.props.name} ref="name" /></div>
+                <div>Category: <input type="text" value={this.props.category} ref="category" /></div>
+                <div>Price: <input type="text" value={this.props.price} ref="price" /></div>
+                <div>Stocked: <input type="checkbox" value={this.props.name} ref="stocked" /></div>
+                
+                <div>
+                    <button type="button" onClick={this.add}>Add</button>
+                </div>
+            </div>
+        );
+    }
+});
+
 var ProductRow = React.createClass({
     
     handleRemove: function() {
@@ -54,16 +90,36 @@ var ProductsTable = React.createClass({
     }
 });
 
-var PRODUCTS = [
-  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-];
+var ProductList = React.createClass({
+    getInitialState: function() {
+        return { products: [
+                {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+                {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+                {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+                {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+                {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+                {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+            ] 
+        };
+    },
+    
+    addProduct: function(product) {
+        // TODO: This update is not pushing it down the child components.
+        this.setState({
+            products: this.state.products.concat([product])
+        }) 
+    },
+    
+    render: function() {
+        return (
+            <div>
+                <ProductsTable products={this.state.products} /> 
+                <ProductForm onProductAdded={this.addProduct} />
+            </div>  
+        );
+    } 
+});
 
-ReactDOM.render(
-    <ProductsTable products={PRODUCTS} />,
+ReactDOM.render(<ProductList />,
     document.getElementById('products')
 )
