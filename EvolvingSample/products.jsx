@@ -35,7 +35,6 @@ var ProductForm = React.createClass({
 });
 
 var ProductRow = React.createClass({
-    
     handleRemove: function() {
         this.props.onRemoveProduct(this.props.product.name);
     },
@@ -50,27 +49,19 @@ var ProductRow = React.createClass({
                 </td>
             </tr>
         );
-    } 
+    }
 });
 
 var ProductsTable = React.createClass({
-    getInitialState: function() {
-        return { products: this.props.products };
+    handleRemove: function(productNameToRemove) {
+        this.props.onRemoveProduct(productNameToRemove)
     },
-    
-    removeProduct: function(productNameToRemove) {
-        this.setState({
-            products: _.filter(this.state.products, function(product) {
-                return product.name !== productNameToRemove;
-            })
-        });
-    },
-    
+
     render: function() {
         var rows = [];
         
-        this.state.products.forEach(function(product) {
-            rows.push(<ProductRow product={product} onRemoveProduct={this.removeProduct} key={product.name} />) 
+        this.props.products.forEach(function(product) {
+            rows.push(<ProductRow product={product} onRemoveProduct={this.handleRemove} key={product.name} />) 
         }.bind(this));
         
         return (
@@ -99,12 +90,19 @@ var ProductList = React.createClass({
                 {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
                 {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
                 {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-            ] 
+            ]
         };
     },
     
+    removeProduct: function(productNameToRemove) {
+        this.setState({
+            products: _.filter(this.state.products, function(product) {
+                return product.name !== productNameToRemove;
+            })
+        });
+    },
+
     addProduct: function(product) {
-        // TODO: This update is not pushing it down the child components.
         this.setState({
             products: this.state.products.concat([product])
         }) 
@@ -113,7 +111,7 @@ var ProductList = React.createClass({
     render: function() {
         return (
             <div>
-                <ProductsTable products={this.state.products} /> 
+                <ProductsTable products={this.state.products} onRemoveProduct={this.removeProduct} /> 
                 <ProductForm onProductAdded={this.addProduct} />
             </div>  
         );
