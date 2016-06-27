@@ -1,5 +1,18 @@
 # Evolving Sample
 
+## Running the Sample
+
+Running the sample is pretty easy:
+
+```bash
+git clone git@github.com:tugberkugurlu/ReactJsSamples.git
+cd ReactJsSamples/EvolvingSample
+bower install
+http-server -o
+```
+
+## TODOs
+
  - [x] Init
  - [x] Hello World
  - [x] First Name, Last Name in text input, full name written into a span.
