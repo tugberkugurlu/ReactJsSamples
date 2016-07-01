@@ -1,4 +1,8 @@
 require("./style.scss");
 var content = require("./content.js");
+var _ = require("underscore");
+var list = ['1', '2', '3', '4'];
 
-document.write(content);
+_.each(list, function (item) {
+    document.write(content + item + "<br />");
+});
