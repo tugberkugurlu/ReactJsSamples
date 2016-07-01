@@ -27,6 +27,7 @@ http-server -o
 
 ## Going Further
 
+ - [ ] Webpack
  - [ ] [Animation](https://facebook.github.io/react/docs/animation.html)
  - [ ] Working with an existing lib like Google Maps JavaScript API which manuplates DOM (to see if that gets React upset)
 
