@@ -34,6 +34,14 @@ Maybe not a fair and good comparison but at least it's how I see it:
  - Smilar to loaders, plugins hooks in well
  - Great documentation and community resources around it.
 
+## Some Loaders
+
+ - [Sass](https://github.com/jtangelder/sass-loader)
+ - [Babel](https://github.com/babel/babel-loader)
+ - [Json](https://github.com/webpack/json-loader)
+ - [Url](https://github.com/webpack/url-loader)
+ - [Bootstrap](https://github.com/shakacode/bootstrap-loader)
+
 ## Resources
 
  - [Webpack Usage](https://webpack.github.io/docs/usage.html)
