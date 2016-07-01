@@ -4,7 +4,10 @@
   "author": "Tugberk Ugurlu",
   "license": "MIT",
   "devDependencies": {
+    "assets-webpack-plugin": "^3.4.0",
     "css-loader": "^0.23.1",
+    "git-sha-webpack-plugin": "0.0.6",
+    "html-webpack-plugin": "^2.21.0",
     "node-sass": "^3.8.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",

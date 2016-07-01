@@ -1,1 +1,4 @@
 bundle.js
+bundle.*.js
+webpack-assets.json
+index.html
