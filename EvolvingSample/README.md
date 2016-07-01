@@ -25,6 +25,11 @@ http-server -o
  - [ ] /products/{productid} to show the details of that product
  - [ ] Make server load slowly, have a loading indicator during the loading process
 
+## Going Further
+
+ - [ ] [Animation](https://facebook.github.io/react/docs/animation.html)
+ - [ ] Working with an existing lib like Google Maps JavaScript API which manuplates DOM (to see if that gets React upset)
+
 ## Resources
 
  - [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
