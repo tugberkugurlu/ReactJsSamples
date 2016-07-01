@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
     entry: './entry.js',
     output: {
@@ -5,11 +7,20 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
-            {
-                test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+        loaders: [{
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
+        }]
+    },
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false
             }
-        ]
-    }
+        })
+    ]
 };
