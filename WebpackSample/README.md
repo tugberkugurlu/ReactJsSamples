@@ -16,3 +16,9 @@ npm install
 webpack
 http-server -o
 ```
+
+You can go fancy on the `webpack` command to enable progress, color and watch:
+
+```bash
+webpack --progress --colors --watch
+```
