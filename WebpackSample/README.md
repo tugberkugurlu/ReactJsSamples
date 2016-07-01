@@ -42,6 +42,10 @@ Maybe not a fair and good comparison but at least it's how I see it:
  - [Url](https://github.com/webpack/url-loader)
  - [Bootstrap](https://github.com/shakacode/bootstrap-loader)
 
+## Some Plugins
+
+ - [DefinePlugin: define variables](https://github.com/webpack/docs/wiki/list-of-plugins#defineplugin)
+
 ## Resources
 
  - [Webpack Usage](https://webpack.github.io/docs/usage.html)
