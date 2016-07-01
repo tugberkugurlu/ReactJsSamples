@@ -50,3 +50,4 @@ Maybe not a fair and good comparison but at least it's how I see it:
  - [Plugins](https://webpack.github.io/docs/usage.html#using-plugins)
  - [Using Plugins](https://webpack.github.io/docs/using-plugins.html)
  - [Browserify vs Webpack](https://medium.com/@housecor/browserify-vs-webpack-b3d7ca08a0a9#.mm20d28rj)
+ - [Long-term caching of static assets with Webpack](https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95#.3x33a1cr7)
