@@ -2,5 +2,9 @@
   "name": "webpacksample",
   "version": "1.0.0",
   "author": "Tugberk Ugurlu",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1"
+  }
 }
