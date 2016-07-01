@@ -31,7 +31,7 @@ Maybe not a fair and good comparison but at least it's how I see it:
  - Great to work with npm on browser stuff and no need for an additional tool like browserify
  - Nicely defined conventions
  - Built-in loaders makes it easy to have a off the shelf experience on most common tasks like requiring non-js assets, etc
- - Smilar to loaders, plugins hooks in well
+ - Smilar to loaders, plugins hook in well
  - Great documentation and community resources around it.
 
 ## Some Loaders
