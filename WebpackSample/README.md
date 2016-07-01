@@ -22,3 +22,11 @@ You can go fancy on the `webpack` command to enable progress, color and watch:
 ```bash
 webpack --progress --colors --watch
 ```
+
+## Resources
+
+ - [Webpack Usage](https://webpack.github.io/docs/usage.html)
+ - [List of Webpack Examples](https://webpack.github.io/docs/examples.html)
+ - [Basic CommonJS Usage](https://github.com/webpack/webpack/tree/master/examples/commonjs)
+ - [Plugins](https://webpack.github.io/docs/usage.html#using-plugins)
+ - [Using Plugins](https://webpack.github.io/docs/using-plugins.html)
