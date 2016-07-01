@@ -14,7 +14,7 @@ Now, you can get the sample running:
 ```bash
 npm install
 webpack
-http-server -o
+http-server dist/ -o
 ```
 
 You can go fancy on the `webpack` command to enable progress, color and watch:
@@ -56,3 +56,5 @@ Maybe not a fair and good comparison but at least it's how I see it:
  - [Browserify vs Webpack](https://medium.com/@housecor/browserify-vs-webpack-b3d7ca08a0a9#.mm20d28rj)
  - [Long-term caching of static assets with Webpack](https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95#.3x33a1cr7)
  - [Code Splitting](https://webpack.github.io/docs/code-splitting.html)
+ - [Bootswatch in Webpack](http://www.saulshanabrook.com/bootswatch-in-webpack/)
+ - [less-loader Imports](https://github.com/webpack/less-loader/tree/da8e09a51aedfac97e9f1b6b8efe2e8589fe1b30#imports)
