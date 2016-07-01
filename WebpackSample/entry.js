@@ -1,4 +1,5 @@
 require("./bootswatch.less");
+require("font-awesome-webpack");
 require("./style.scss");
 var content = require("./content.js");
 var _ = require("underscore");
