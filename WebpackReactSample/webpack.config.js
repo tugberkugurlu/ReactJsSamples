@@ -25,13 +25,16 @@ var envBasedPlugins = process.env.NODE_ENV !== 'development' ? [
 ] : [];
 
 module.exports = {
-    entry: './main.jsx',
+    entry: './app/main.jsx',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.[hash].js'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx'],
+        root: [
+            path.resolve(path.join(__dirname, 'app'))
+        ]
     },
     module: {
         loaders: [
