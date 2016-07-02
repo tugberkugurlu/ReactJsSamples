@@ -23,16 +23,32 @@ var ProductForm = React.createClass({
     
     render: function() {
         return (
-            <div>
-                <h2>Add Product</h2>
-                
-                <div>Name: <input type="text" value={this.props.name} ref="name" /></div>
-                <div>Category: <input type="text" value={this.props.category} ref="category" /></div>
-                <div>Price: <input type="text" value={this.props.price} ref="price" /></div>
-                <div>Stocked: <input type="checkbox" value={this.props.name} ref="stocked" /></div>
-                
-                <div>
-                    <button type="button" onClick={this.add}>Add</button>
+            <div className="row">
+                <div className="col-md-12">
+                    <h2>Add Product</h2>
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="productNameInput">Name</label>
+                            <input type="text" className="form-control" value={this.props.name} ref="name" id="productNameInput" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="productCatInput">Category</label>
+                            <input type="text" className="form-control" value={this.props.category} ref="category" id="productCatInput" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="productPriceInput">Price</label>
+                            <input type="text" className="form-control" value={this.props.price} ref="price" id="productPriceInput" />
+                        </div>
+                        <div className="checkbox">
+                            <label>
+                                <input type="checkbox" value={this.props.name} ref="stocked" /> It's in stock
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <button className="btn btn-default" type="button" onClick={this.add}>Add</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         );
@@ -70,17 +86,19 @@ var ProductsTable = React.createClass({
         }.bind(this));
         
         return (
-            <div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>{rows}</tbody>
-                </table>
+            <div className="row">
+                <div className="col-md-12">
+                    <table className="table table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>{rows}</tbody>
+                    </table>
+                </div>
             </div>
         );
     }
@@ -115,9 +133,11 @@ var ProductList = React.createClass({
     
     render: function() {
         return (
-            <div>
-                <ProductsTable products={this.state.products} onRemoveProduct={this.removeProduct} /> 
-                <ProductForm onProductAdded={this.addProduct} />
+            <div className="row">
+                <div className="col-md-12">
+                    <ProductsTable products={this.state.products} onRemoveProduct={this.removeProduct} /> 
+                    <ProductForm onProductAdded={this.addProduct} />
+                </div>
             </div>  
         );
     }
