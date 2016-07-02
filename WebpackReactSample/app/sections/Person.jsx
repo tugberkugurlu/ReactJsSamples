@@ -1,7 +1,7 @@
 var React = require('react');
-var FirstName = require('./FirstName.jsx'); 
-var LastName = require('./LastName.jsx');
-var FullName = require('./FullName.jsx');
+var FirstName = require('../views/FirstName.jsx'); 
+var LastName = require('../views/LastName.jsx');
+var FullName = require('../views/FullName.jsx');
 
 module.exports = React.createClass({
     getInitialState: function() {
