@@ -1,10 +1,5 @@
 var React = require('react');
 var ReactDom = require('react-dom');
+var Person = require('./Person.jsx');
 
-var MyComponent = React.createClass({
-    render: function () {
-        return (<div>Hello World</div>);
-    }
-});
-
-ReactDom.render(<MyComponent />, document.getElementById('container'));
+ReactDom.render(<Person />, document.getElementById('container'));
