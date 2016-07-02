@@ -1,9 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 var AssetsPlugin = require('assets-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var basePlugins = [ 
+var basePlugins = [
+    new CleanWebpackPlugin(['dist'], { root: __dirname }),
     new AssetsPlugin(),
     new HtmlWebpackPlugin({
         template: 'index.html',
