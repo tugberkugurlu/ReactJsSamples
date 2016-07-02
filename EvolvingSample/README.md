@@ -39,3 +39,4 @@ http-server -o
  - [React Developer Tools](https://facebook.github.io/react/blog/2015/09/02/new-react-developer-tools.html)
  - [Getting started with npm and Browserify in a React project](http://codeutopia.net/blog/2016/01/25/getting-started-with-npm-and-browserify-in-a-react-project/)
  - [Trigger child re-rendering in React.js](http://stackoverflow.com/questions/30034265/trigger-child-re-rendering-in-react-js)
+ - [Understanding the React Component Lifecycle](http://busypeoples.github.io/post/react-component-lifecycle/)
