@@ -160,10 +160,9 @@ var App = React.createClass({
             <div>
                 <div className="row">
                     <div className="col-md-12">
-                        <Link to="/about">About</Link>
+                        <Link to="/products">Products</Link> &nbsp; <Link to="/about">About</Link>
                     </div>
                 </div>
-                <ProductList />
                 {this.props.children}
             </div>
         );
@@ -172,7 +171,9 @@ var App = React.createClass({
 
 ReactDom.render((
     <Router history={browserHistory}>
-        <Route path="/" component={App} />
-        <Route path="/about" component={MyComponent} />
+        <Route path="/" component={App}>
+            <Route path="products" component={ProductList} />
+            <Route path="about" component={MyComponent} />
+        </Route>
     </Router>
 ), document.getElementById('container'));
