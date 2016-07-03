@@ -29,6 +29,7 @@
     "font-awesome": "^4.6.3",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
+    "react-router": "^2.5.2",
     "underscore": "^1.8.3"
   }
 }

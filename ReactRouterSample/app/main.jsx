@@ -1,6 +1,10 @@
 require("./bootswatch.less");
 var React = require('react');
 var ReactDom = require('react-dom');
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var Link = require('react-router').Link;
+var browserHistory = require('react-router').browserHistory;
 var _ = require('underscore');
 
 var ProductForm = React.createClass({
@@ -88,6 +92,7 @@ var ProductsTable = React.createClass({
         return (
             <div className="row">
                 <div className="col-md-12">
+                    <h2>Products</h2>
                     <table className="table table-striped table-bordered">
                         <thead>
                         <tr>
@@ -143,4 +148,31 @@ var ProductList = React.createClass({
     }
 });
 
-ReactDom.render(<ProductList />, document.getElementById('container'));
+var MyComponent = React.createClass({
+    render: function () {
+        return (<div>Hello World</div>);
+    }
+});
+
+var App = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <Link to="/about">About</Link>
+                    </div>
+                </div>
+                <ProductList />
+                {this.props.children}
+            </div>
+        );
+    }
+});
+
+ReactDom.render((
+    <Router history={browserHistory}>
+        <Route path="/" component={App} />
+        <Route path="/about" component={MyComponent} />
+    </Router>
+), document.getElementById('container'));
