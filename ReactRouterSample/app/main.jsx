@@ -68,7 +68,9 @@ var ProductRow = React.createClass({
     render: function() {
         return (
             <tr>
-                <td>{this.props.product.name}</td>
+                <td>
+                    <Link to={'products/' + this.props.product.name}>{this.props.product.name}</Link>
+                </td>
                 <td>{this.props.product.price}</td>
                 <td>
                     <a href="#" onClick={this.handleRemove}>X</a>
@@ -110,7 +112,7 @@ var ProductsTable = React.createClass({
     }
 });
 
-var ProductList = React.createClass({
+var Products = React.createClass({
     getInitialState: function() {
         return { products: productStore.getProducts() };
     },
@@ -141,6 +143,21 @@ var ProductList = React.createClass({
     }
 });
 
+var Product = React.createClass({
+    getInitialState: function () {
+        return {
+            product: productStore.getProduct(this.props.params.name)
+        };
+    },
+    render: function () {
+        return (
+            <div>
+                <h2>{this.state.product.name}</h2>
+            </div>
+        );
+    }
+});
+
 var MyComponent = React.createClass({
     render: function () {
         return (<div>Hello World</div>);
@@ -165,7 +182,8 @@ var App = React.createClass({
 ReactDom.render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
-            <Route path="products" component={ProductList} />
+            <Route path="products" component={Products} />
+            <Route path="products/:name" component={Product} />
             <Route path="about" component={MyComponent} />
         </Route>
     </Router>
