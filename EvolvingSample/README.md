@@ -40,3 +40,4 @@ http-server -o
  - [Getting started with npm and Browserify in a React project](http://codeutopia.net/blog/2016/01/25/getting-started-with-npm-and-browserify-in-a-react-project/)
  - [Trigger child re-rendering in React.js](http://stackoverflow.com/questions/30034265/trigger-child-re-rendering-in-react-js)
  - [Understanding the React Component Lifecycle](http://busypeoples.github.io/post/react-component-lifecycle/)
+ - [react-makes-you-sad: Here’s a flowchart to make you happy again!](https://github.com/gaearon/react-makes-you-sad)
