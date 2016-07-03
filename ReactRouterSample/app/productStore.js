@@ -13,9 +13,9 @@ module.exports = {
         return products;
     },
 
-    getProduct: function (id) {
-        return  _.filter(products, function(product) {
-            return product.name !== productNameToRemove;
+    getProduct: function (productName) {
+        return  _.find(products, function (product) {
+            return product.name === productName;
         });
     },
 
