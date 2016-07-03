@@ -6,6 +6,7 @@ var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var browserHistory = require('react-router').browserHistory;
 var _ = require('underscore');
+var productStore = require('./productStore.js');
 
 var ProductForm = React.createClass({
     getInitialState: function() {
@@ -13,7 +14,7 @@ var ProductForm = React.createClass({
             category: '', 
             price: '', 
             stocked: false, 
-            name: ''            
+            name: ''
         }
     },
     add: function() {
@@ -111,28 +112,20 @@ var ProductsTable = React.createClass({
 
 var ProductList = React.createClass({
     getInitialState: function() {
-        return { products: [
-                {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-                {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-                {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-                {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-                {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-                {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-            ]
-        };
+        return { products: productStore.getProducts() };
     },
     
     removeProduct: function(productNameToRemove) {
+        productStore.removeProduct(productNameToRemove);
         this.setState({
-            products: _.filter(this.state.products, function(product) {
-                return product.name !== productNameToRemove;
-            })
+            products: productStore.getProducts()
         });
     },
 
     addProduct: function(product) {
+        productStore.addProduct(product);
         this.setState({
-            products: this.state.products.concat([product])
+            products: productStore.getProducts()
         }) 
     },
     
