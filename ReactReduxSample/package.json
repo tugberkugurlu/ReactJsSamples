@@ -1,0 +1,33 @@
+{
+  "name": "webpackreactsample",
+  "version": "1.0.0",
+  "author": "Tugberk Ugurlu",
+  "license": "MIT",
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.4.0",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "clean-webpack-plugin": "^0.1.9",
+    "css-loader": "^0.23.1",
+    "font-awesome": "^4.6.3",
+    "font-awesome-webpack": "0.0.4",
+    "git-sha-webpack-plugin": "0.0.6",
+    "html-webpack-plugin": "^2.21.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "bootswatch": "^3.3.6",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "redux": "^3.5.2",
+    "underscore": "^1.8.3"
+  }
+}
