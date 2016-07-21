@@ -1,0 +1,46 @@
+@mixin wholePage {
+    padding: 20px;
+    font-size: 25px;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+#black {
+    background-color: #000000;
+    color: #ffffff;
+    @include wholePage;
+}
+
+#red {
+    background-color: red;
+    color: #ffffff;
+    @include wholePage;
+}
+
+#green {
+    background-color: green;
+    color: #ffffff;
+    @include wholePage;
+}
+
+/* animation stuff */
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+}
+
+.example-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0;
+}
