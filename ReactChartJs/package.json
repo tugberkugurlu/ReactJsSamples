@@ -10,9 +10,10 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "bootswatch": "^3.3.6",
+    "chart.js": "^1.1.1",
     "font-awesome": "^4.6.3",
     "react": "15.0.2",
-    "react-addons-css-transition-group": "^15.2.1",
+    "react-chartjs": "^0.7.3",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
