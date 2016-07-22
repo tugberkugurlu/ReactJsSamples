@@ -2,7 +2,7 @@
 
 Assume that you have a form like below:
 
-> TODO: Add image here
+![](./media/add-person.png)
 
 In this example, when you select a country from the populated select list, the city select element will be populated with options based on the selected country. This form page (`PersonCreationForm`) consists of below components:
 
