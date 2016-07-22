@@ -11,7 +11,7 @@ In this example, when you select a country from the populated select list, the c
  
 The question here is this: how should I communicate the selection from `CountrySelectionForm` component to `CitySelectionForm` component? Options:
 
- - Inside the `PersonCreationForm` component by just hooking up the `onCountrySelected` prop of `CountrySelectionForm` and passing the result to `CitySelectionForm` through is `country` prop. No need to go through Redux for this communication. However, changing the `country` prop triggers a change in `CitySelectionForm` to get cities based on selected country from Redux store.
+ - Inside the `PersonCreationForm` component by just hooking up the `onCountrySelected` prop of `CountrySelectionForm` and passing the result to `CitySelectionForm` through its `country` prop. No need to go through Redux for this communication. However, changing the `country` prop triggers a change in `CitySelectionForm` to get cities based on selected country from Redux store.
  - On country selection, `PersonCreationForm` component dispatches the action indicating which country is selected. Based on that, `PersonCreationForm` gets notified and passes the result to `CitySelectionForm` through is `country` prop. That triggers a change in `CitySelectionForm` to get cities based on selected country from Redux store.
  - On country selection, `PersonCreationForm` component dispatches the action indicating which country is selected. Based on that, `CitySelectionForm` gets notified. That triggers a change in `CitySelectionForm` to get cities based on selected country from Redux store.
  
