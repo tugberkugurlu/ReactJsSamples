@@ -1,6 +1,6 @@
 # Form Sample
 
-Assume that you have a form like below:
+Assume that you have a form like below to add a new person:
 
 ![](./.media/add-person.png)
 
