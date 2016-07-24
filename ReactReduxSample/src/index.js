@@ -2,11 +2,9 @@ var Redux = require('redux');
 var React = require('react');
 var ReactDom = require('react-dom');
 
-var MyComponent = React.createClass({
-    render: function () {
-        return (<div>Hello World</div>);
-    }
-});
+var HelloWorld = () => {
+    return <div>Hello World!</div>;
+};
 
 var counter = function (state, action) {
     if(state === undefined) {
@@ -35,4 +33,7 @@ document.addEventListener('click', () => {
     store.dispatch({ type: 'INCREMENT' });
 });
 
-ReactDom.render(<MyComponent />, document.getElementById('container'));
+ReactDom.render(
+    <HelloWorld />, 
+    document.getElementById('app')
+);
