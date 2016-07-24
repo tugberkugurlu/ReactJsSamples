@@ -3,6 +3,17 @@ var React = require('react');
 var ReactDom = require('react-dom');
 
 var Person = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <div><strong>Name: </strong> {this.props.name}</div>
+                <div><strong>Lastname: </strong> {this.props.lastname}</div>
+            </div>
+        );
+    }
+});
+
+var PersonContainer = React.createClass({
     getInitialState: () => {
         return {
             loading: true,
@@ -32,32 +43,16 @@ var Person = React.createClass({
     render: function () {
         var view;
         if(this.state.loading) {
-            view = <div>Fetching...</div>;
+            view = <div>Loading...</div>;
         } else {
-            view = (
-                <div>
-                    <div>
-                        <strong>Name</strong>: {this.state.person.name}
-                    </div>
-
-                    <div>
-                        <strong>Last name</strong>: {this.state.person.lastName}
-                    </div>
-                </div>
-            );
+            view = <Person name={this.state.person.name} lastname={this.state.person.lastName} />;
         }
 
         return view;
     }
 });
 
-var App = () => {
-    return <div>
-        <Person />
-    </div>;
-};
-
 ReactDom.render(
-    <App />, 
+    <PersonContainer />, 
     document.getElementById('app')
 );
