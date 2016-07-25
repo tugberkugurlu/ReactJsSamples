@@ -1,0 +1,43 @@
+#messaging {
+    height: 100%;
+
+    .no-gutter > [class*='col-'] {
+        padding-right:0;
+        padding-left:0;
+    }
+
+    .header {
+        background-color: #eeeeee;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .username {
+            font-size: 25px;
+        }
+
+        .unread-count {
+            font-size: 25px;
+        }
+    }
+
+    .messages {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .control-panel {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        button {
+            width:100%;
+            padding-left: 5px;
+        }
+    }
+}
