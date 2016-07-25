@@ -1,6 +1,7 @@
-var Redux = require('redux');
 var React = require('react');
 var ReactDom = require('react-dom');
+import { applyMiddleware, createStore } from 'redux';
+import createLogger from 'redux-logger';
 
 var counter = function (state = 0, action) {
     switch (action.type) {
@@ -13,7 +14,8 @@ var counter = function (state = 0, action) {
     }
 };
 
-var store = Redux.createStore(counter);
+const logger = createLogger();
+const store = createStore(counter, applyMiddleware(logger));
 
 var HelloWorld = React.createClass({
     getInitialState: function () {
