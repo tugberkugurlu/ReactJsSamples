@@ -5,6 +5,16 @@ var ReactDom = require('react-dom');
 import { applyMiddleware, createStore } from 'redux';
 import createLogger from 'redux-logger';
 
+const guid = () => {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
+
 var counter = function (state = 0, action) {
     switch (action.type) {
         case 'INCREMENT':
@@ -46,6 +56,7 @@ var HelloWorld = React.createClass({
 var Messaging = React.createClass({
     onMessageSent: function () {
         const newMessages = this.state.messages.concat([{
+            id: guid(),
             from: this.props.userName,
             content: this.state.messageToSend
         }]);
@@ -65,17 +76,17 @@ var Messaging = React.createClass({
     render: function () {
         return <div id="messaging">
             <div className="header row">
-                <div className="logo col-xs-8">M</div>
-                <div className="username col-xs-2">({this.props.userName})</div>
+                <div className="logo col-xs-7">M</div>
+                <div className="username col-xs-3">({this.props.userName})</div>
                 <div className="unread-count col-xs-2">{this.state.unreadCount}</div>
             </div>
 
             <div className="messages row">
                 <div className="col-xs-12">
                     {this.state.messages.map(msg => 
-                        <div className="message row">
+                        <div key={msg.id} className="message row">
                             <div className="from col-xs-3" title={msg.sentAt}>{msg.from}:</div>
-                            <div className="content col-xs-">{msg.content}</div>
+                            <div className="content col-xs-9">{msg.content}</div>
                         </div>
                     )}
                 </div>
@@ -101,12 +112,14 @@ document.addEventListener('click', () => {
 });
 
 ReactDom.render(
-    <div className="row">
-        <div className="col-sm-12">
-            <div className="row">
-                <div className="col-sm-2"><HelloWorld /></div>
-                <div className="col-sm-5"><Messaging userName="Bob" /></div>
-                <div className="col-sm-5"><Messaging userName="Alice" /></div>
+    <div className="container">
+        <div className="row">
+            <div className="col-sm-12">
+                <div className="row">
+                    <div className="col-sm-2"><HelloWorld /></div>
+                    <div className="col-sm-5"><Messaging userName="Bob" /></div>
+                    <div className="col-sm-5"><Messaging userName="Alice" /></div>
+                </div>
             </div>
         </div>
     </div>, 
