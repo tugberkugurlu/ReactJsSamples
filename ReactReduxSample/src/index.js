@@ -1,3 +1,4 @@
+require('./bootswatch.less');
 var React = require('react');
 var ReactDom = require('react-dom');
 import { applyMiddleware, createStore } from 'redux';
@@ -46,6 +47,9 @@ document.addEventListener('click', () => {
 });
 
 ReactDom.render(
-    <HelloWorld />, 
+    <div className="row">
+        <div className="col-sm-6"><HelloWorld /></div>
+        <div className="col-sm-6"><HelloWorld /></div>
+    </div>, 
     document.getElementById('app')
 );
