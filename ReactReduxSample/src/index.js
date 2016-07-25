@@ -54,6 +54,11 @@ var HelloWorld = React.createClass({
 });
 
 var Messaging = React.createClass({
+    onKeyDown: function (e) {
+        if(e.keyCode === 13){
+            this.onMessageSent();
+        }
+    },
     onMessageSent: function () {
         const newMessages = this.state.messages.concat([{
             id: guid(),
@@ -94,9 +99,10 @@ var Messaging = React.createClass({
 
             <div className="control-panel row no-gutter">
                 <div className="col-xs-9">
-                    <input className="form-control" type="text" 
+                    <input autoFocus className="form-control" type="text" 
                         placeholder="write your message..." 
-                        value={this.state.messageToSend} 
+                        value={this.state.messageToSend}
+                        onKeyDown={this.onKeyDown}
                         onChange={(e) => this.setState({ messageToSend: e.currentTarget.value })} />
                 </div>
                 <div className="col-xs-3">
