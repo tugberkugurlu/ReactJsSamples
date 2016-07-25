@@ -2,15 +2,7 @@ var Redux = require('redux');
 var React = require('react');
 var ReactDom = require('react-dom');
 
-var HelloWorld = () => {
-    return <div>Hello World!</div>;
-};
-
-var counter = function (state, action) {
-    if(state === undefined) {
-        state = 0;
-    }
-
+var counter = function (state = 0, action) {
     switch (action.type) {
         case 'INCREMENT':
             return state + 1;
@@ -19,15 +11,33 @@ var counter = function (state, action) {
         default:
             return state;
     }
-}
-
-var store = Redux.createStore(counter);
-var render = function () {
-    document.getElementById('counter').innerHTML = store.getState();
 };
 
-store.subscribe(render);
-render();
+var store = Redux.createStore(counter);
+
+var HelloWorld = React.createClass({
+    getInitialState: function () {
+        return {
+            count: store.getState()
+        };
+    },
+
+    componentDidMount: function () {
+        this.unsubscribe = store.subscribe(function () {
+            this.setState({
+                count: store.getState()
+            });
+        }.bind(this));
+    },
+
+    componentWillUnmount: function () {
+        this.unsubscribe();
+    },
+
+    render: function () {
+        return <div>count: {this.state.count}</div>;
+    }
+});
 
 document.addEventListener('click', () => {
     store.dispatch({ type: 'INCREMENT' });
