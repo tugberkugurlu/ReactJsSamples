@@ -37,3 +37,7 @@
 
  - `MESSAGE_SENT`
  - `MESSAGE_READ`
+
+## Resources
+
+ - [Recommended usage of connect()](https://github.com/reactjs/redux/issues/419)
