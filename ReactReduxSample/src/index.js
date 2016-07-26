@@ -3,7 +3,8 @@ require('./messaging.scss');
 var React = require('react');
 var ReactDom = require('react-dom');
 var Provider = require('react-redux').Provider;
-import { applyMiddleware, createStore } from 'redux';
+var _ = require('underscore');
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import createLogger from 'redux-logger';
 
 const guid = () => {
@@ -17,7 +18,9 @@ const guid = () => {
 }
 
 const initialState = {
-    count: 0
+    count: 0,
+    messages: [],
+    messageReadHistory: {}
 };
 
 const counter = function (state = initialState.count, action) {
@@ -31,20 +34,55 @@ const counter = function (state = initialState.count, action) {
     }
 };
 
+const messageReducer = function (state = initialState.messages, action) {
+    switch (action.type) {
+        case 'MESSAGE_SENT':
+            return state.concat([action.message]);
+    
+        default:
+            return state;
+    }
+};
+
+const messageReadHistoryReducer = function (state = initialState.messageReadHistory, action) {
+    switch (action.type) {
+        case 'MESSAGE_READ': {
+            const existingReadRecord = state[action.readRecord.messageId],
+                newReadRecord = { by: action.readRecord.by, at: action.readRecord.at },
+                readRecordToAdd = {};
+
+            readRecordToAdd[action.readRecord.messageId] = existingReadRecord === undefined ?
+                [newReadRecord] :
+                existingReadRecord.concat([newReadRecord]);
+
+            return Object.assign({}, state, readRecordToAdd);
+        }
+
+        default:
+            return state;
+    }
+};
+
+const rootReducer = combineReducers({
+    count: counter,
+    messages: messageReducer,
+    messageReadHistory: messageReadHistoryReducer
+});
+
 const logger = createLogger();
-const store = createStore(counter, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 var HelloWorld = React.createClass({
     getInitialState: function () {
         return {
-            count: store.getState()
+            count: store.getState().count
         };
     },
 
     componentDidMount: function () {
         this.unsubscribe = store.subscribe(function () {
             this.setState({
-                count: store.getState()
+                count: store.getState().count
             });
         }.bind(this));
     },
