@@ -63,7 +63,8 @@ var Messaging = React.createClass({
         const newMessages = this.state.messages.concat([{
             id: guid(),
             from: this.props.userName,
-            content: this.state.messageToSend
+            content: this.state.messageToSend,
+            sentAt: new Date().toISOString()
         }]);
 
         this.setState({
@@ -89,8 +90,8 @@ var Messaging = React.createClass({
             <div className="messages row">
                 <div className="col-xs-12">
                     {this.state.messages.map(msg => 
-                        <div key={msg.id} className="message row">
-                            <div className="from col-xs-3" title={msg.sentAt}>{msg.from}:</div>
+                        <div key={msg.id} className="message row" title={msg.sentAt}>
+                            <div className="from col-xs-3">{msg.from}:</div>
                             <div className="content col-xs-9">{msg.content}</div>
                         </div>
                     )}
