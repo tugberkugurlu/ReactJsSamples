@@ -2,6 +2,7 @@ require('./bootswatch.less');
 require('./messaging.scss');
 var React = require('react');
 var ReactDom = require('react-dom');
+var Provider = require('react-redux').Provider;
 import { applyMiddleware, createStore } from 'redux';
 import createLogger from 'redux-logger';
 
@@ -15,7 +16,11 @@ const guid = () => {
     s4() + '-' + s4() + s4() + s4();
 }
 
-var counter = function (state = 0, action) {
+const initialState = {
+    count: 0
+};
+
+const counter = function (state = initialState.count, action) {
     switch (action.type) {
         case 'INCREMENT':
             return state + 1;
@@ -114,21 +119,23 @@ var Messaging = React.createClass({
     }
 });
 
-document.addEventListener('click', () => {
-    store.dispatch({ type: 'INCREMENT' });
-});
-
 ReactDom.render(
-    <div className="container">
-        <div className="row">
-            <div className="col-sm-12">
-                <div className="row">
-                    <div className="col-sm-2"><HelloWorld /></div>
-                    <div className="col-sm-5"><Messaging userName="Bob" /></div>
-                    <div className="col-sm-5"><Messaging userName="Alice" /></div>
+    <Provider store={store}>
+        <div className="container">
+            <div className="row">
+                <div className="col-sm-12">
+                    <div className="row">
+                        <div className="col-sm-2"><HelloWorld /></div>
+                        <div className="col-sm-5"><Messaging userName="Bob" /></div>
+                        <div className="col-sm-5"><Messaging userName="Alice" /></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>, 
+    </Provider>, 
     document.getElementById('app')
 );
+
+document.addEventListener('click', () => {
+    store.dispatch({ type: 'INCREMENT' });
+});
