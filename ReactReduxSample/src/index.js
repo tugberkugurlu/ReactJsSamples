@@ -1,8 +1,10 @@
 require('./bootswatch.less');
 require('./messaging.scss');
 var React = require('react');
+var PropTypes = require('react').PropTypes;
 var ReactDom = require('react-dom');
 var Provider = require('react-redux').Provider;
+var connect = require('react-redux').connect;
 var _ = require('underscore');
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import createLogger from 'redux-logger';
@@ -96,30 +98,27 @@ var HelloWorld = React.createClass({
     }
 });
 
-var Messaging = React.createClass({
+var MessagingInner = React.createClass({
     onKeyDown: function (e) {
         if(e.keyCode === 13){
             this.onMessageSent();
         }
     },
     onMessageSent: function () {
-        const newMessages = this.state.messages.concat([{
+        const messageToSend = {
             id: guid(),
             from: this.props.userName,
             content: this.state.messageToSend,
             sentAt: new Date().toISOString()
-        }]);
+        };
 
-        this.setState({
-            messages: newMessages,
-            messageToSend: ''
-        });
+        this.props.onMessageSent(messageToSend);
+        this.setState({ messageToSend: '' });
     },
     getInitialState: function () {
         return {
             messageToSend: '',
-            unreadCount: 0,
-            messages: []
+            unreadCount: 0
         };
     },
     render: function () {
@@ -132,7 +131,7 @@ var Messaging = React.createClass({
 
             <div className="messages row">
                 <div className="col-xs-12">
-                    {this.state.messages.map(msg => 
+                    {this.props.messages.map(msg => 
                         <div key={msg.id} className="message row" title={msg.sentAt}>
                             <div className="from col-xs-3">{msg.from}:</div>
                             <div className="content col-xs-9">{msg.content}</div>
@@ -156,6 +155,32 @@ var Messaging = React.createClass({
         </div>;
     }
 });
+
+MessagingInner.propTypes = {
+    userName: PropTypes.string.isRequired,
+    messages: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+    return {
+        userName: ownProps.userName,
+        messages: state.messages
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onMessageSent: (message) => {
+            dispatch({ type: 'MESSAGE_SENT', message: message })
+        }
+    };
+};
+
+const Messaging = connect(mapStateToProps, mapDispatchToProps)(MessagingInner);
+
+Messaging.propTypes = {
+    userName: PropTypes.string.isRequired
+};
 
 ReactDom.render(
     <Provider store={store}>
