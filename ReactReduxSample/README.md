@@ -6,8 +6,8 @@
 
 ```json
 {
-    messages: [],
-    messageReadHistory: []
+    "messages": [],
+    "messageReadHistory": []
 }
 ```
 
