@@ -1,0 +1,26 @@
+.loading-indicator-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 99999;
+    background-color: #fff;
+    opacity: 0.7;
+
+    div.inner {
+        display: table-cell;
+        vertical-align: middle;
+        position: fixed;
+        left: 50%;
+        top: 45%;
+
+        & > div {
+            opacity: 1;
+            background-color: #ed5565;
+            border: 1px solid #eeeeee;
+            width: 100px;
+            height: 100px;             
+        }
+    }
+}
