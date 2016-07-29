@@ -74,11 +74,21 @@ const rootReducer = combineReducers({
 const logger = createLogger();
 const store = createStore(rootReducer, applyMiddleware(logger));
 
-var HelloWorld = React.createClass({
-    getInitialState: function () {
+const Counter = React.createClass({
+    getInitialState: () => {
         return {
             count: store.getState().count
         };
+    },
+
+    onIncrement: (e) => {
+        e.preventDefault();
+        store.dispatch({ type: 'INCREMENT' });
+    },
+
+    onDecrement: (e) => {
+        e.preventDefault();
+        store.dispatch({ type: 'DECREMENT' });
     },
 
     componentDidMount: function () {
@@ -94,7 +104,14 @@ var HelloWorld = React.createClass({
     },
 
     render: function () {
-        return <div>count: {this.state.count}</div>;
+        return <div>
+            <div>
+                <button className="btn btn-default" onClick={this.onIncrement}>+</button>
+                <button className="btn btn-default" onClick={this.onDecrement}>-</button>
+            </div>
+
+            <div>Count: {this.state.count}</div>
+        </div>;
     }
 });
 
@@ -188,9 +205,9 @@ ReactDom.render(
             <div className="row">
                 <div className="col-sm-12">
                     <div className="row">
-                        <div className="col-sm-2"><HelloWorld /></div>
-                        <div className="col-sm-5"><Messaging userName="Bob" /></div>
-                        <div className="col-sm-5"><Messaging userName="Alice" /></div>
+                        <div className="col-sm-2"><Counter /></div>
+                        <div className="col-sm-5 click-observe"><Messaging userName="Bob" /></div>
+                        <div className="col-sm-5 click-observe"><Messaging userName="Alice" /></div>
                     </div>
                 </div>
             </div>
@@ -199,6 +216,8 @@ ReactDom.render(
     document.getElementById('app')
 );
 
-document.addEventListener('click', () => {
-    store.dispatch({ type: 'INCREMENT' });
+_(document.getElementsByClassName('click-observe')).each((e) => {
+    e.addEventListener('click', () => {
+        store.dispatch({ type: 'INCREMENT' });
+    });
 });
