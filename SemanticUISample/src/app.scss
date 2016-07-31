@@ -1,0 +1,14 @@
+#main-container {
+    margin-top: 20px;
+}
+
+.b-tag {
+    margin-left: 10px;
+    &:first-of-type {
+        margin-left: 0;
+    }
+}
+
+.icon {
+    cursor: inherit;
+}
