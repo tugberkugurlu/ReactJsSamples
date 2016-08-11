@@ -16,7 +16,10 @@ var Line = React.createClass({
                 .attr("x2", 200)
                 .attr("y2", 10)
                 .attr("stroke-width", 2)
-                .attr("stroke", this.props.color);
+                .attr("stroke", this.props.color)
+            .on("mouseover", () => {
+                console.log("mouse over...");
+            })
     },
     render: function () {
         return <span></span>;
