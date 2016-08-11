@@ -8,7 +8,7 @@ var Line = React.createClass({
         var svg = d3.select(el)
             .append('svg')
                 .attr('class', 'd3')
-                .attr("width", 200)
+                .attr("width", this.props.width)
                 .attr("height", 30)
             .append('line')
                 .attr("x1", 0)
@@ -45,9 +45,9 @@ var HelloWorld = React.createClass({
             <div><Bar /></div>
             <br />
             <div>
-                <Line color="#ccffcc" />
-                <Line color="#009933" />
-                <Line color="#f0f5f5" />
+                <Line color="#ccffcc" width="150px" />
+                <Line color="#009933" width="90px" />
+                <Line color="#f0f5f5" width="50px" />
             </div>
         </div>;
     }
