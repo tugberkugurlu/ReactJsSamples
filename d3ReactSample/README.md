@@ -8,3 +8,4 @@
  - [React.js By Example: Interacting with the DOM](http://jamesknelson.com/react-js-by-example-interacting-with-the-dom/)
  - [SVG Basic Shapes and D3.js](https://www.dashingd3js.com/svg-basic-shapes-and-d3js)
  - [SVG FOR ABSOLUTE BEGINNERS](http://unicorn-ui.com/blog/svg-for-beginners.html)
+ - [SVG Text Element](https://www.dashingd3js.com/svg-text-element)
