@@ -20,6 +20,9 @@ var Line = React.createClass({
             .on("mouseover", () => {
                 console.log("mouse over...");
             })
+            .on('mouseout', () => {
+                console.log("mouse out...");
+            });
     },
     render: function () {
         return <span></span>;
