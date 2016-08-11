@@ -6,3 +6,5 @@
  - [Donut Chart Sample](http://jsfiddle.net/gregfedorov/qh9x5/9/)
  - [D3 within React the right way](http://oli.me.uk/2015/09/09/d3-within-react-the-right-way/)
  - [React.js By Example: Interacting with the DOM](http://jamesknelson.com/react-js-by-example-interacting-with-the-dom/)
+ - [SVG Basic Shapes and D3.js](https://www.dashingd3js.com/svg-basic-shapes-and-d3js)
+ - [SVG FOR ABSOLUTE BEGINNERS](http://unicorn-ui.com/blog/svg-for-beginners.html)
