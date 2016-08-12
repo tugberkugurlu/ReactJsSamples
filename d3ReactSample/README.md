@@ -9,7 +9,7 @@
  - [SVG Basic Shapes and D3.js](https://www.dashingd3js.com/svg-basic-shapes-and-d3js)
  - [SVG FOR ABSOLUTE BEGINNERS](http://unicorn-ui.com/blog/svg-for-beginners.html)
  - [SVG Text Element](https://www.dashingd3js.com/svg-text-element)
-
+ - [d3 doesn't work with import, it only works with require](https://github.com/Microsoft/TypeScript/issues/5565)
 
 ```
 // http://stackoverflow.com/questions/21990857/d3-js-how-to-get-the-computed-width-and-height-for-an-arbitrary-element
