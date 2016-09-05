@@ -1,5 +1,24 @@
 # d3 Sample
 
+## Running the Sample
+
+The sample makes use of an API which you can run with [dotnet CLI](https://www.microsoft.com/net/core). Currently using version `1.0.0-preview2-003121`. To run the HTTP API, run the below commands:
+
+```bash
+cd api-server
+dotnet restore
+dotnet run
+```
+
+After that, run the Web application:
+
+```
+npm install
+npm start
+```
+
+## Resources
+
  - [using d3.js as an external in webpack](http://stackoverflow.com/questions/31616235/using-d3-js-as-an-external-in-webpack)
  - [Use Webpack with D3 Dashboard Pages](http://fengshuo.co/2015/06/27/use-webpack-with-d3-dashboard-pages/)
  - [D3 version 4.0](https://github.com/visfest/topics2015/blob/b7fcab9f481b12948fb96df3bafb9a5997c57816/d3-v4.md)
