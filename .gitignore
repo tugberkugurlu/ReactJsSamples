@@ -257,3 +257,5 @@ bower_components/
 
 # new NPM log files, e.g. npm-debug.log.2564460075
 *.log.*
+
+.DS_STORE
