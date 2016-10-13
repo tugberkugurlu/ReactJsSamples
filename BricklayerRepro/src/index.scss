@@ -1,0 +1,27 @@
+.search-results-container {
+    margin-top: 20px;
+    
+    @media(max-width:767px) {
+        .bricklayer-column-sizer {
+            width: 100%;
+        }    
+    }
+
+    @media(max-width:767px) and (orientation:landscape) {
+        .bricklayer-column-sizer {
+            width: 33.33%;
+        }    
+    }
+
+    @media(min-width:768px) {
+        .bricklayer-column-sizer {
+            width: 25%;
+        }
+    }
+
+    @media(min-width:992px) {
+        .bricklayer-column-sizer {
+            width: 20%;
+        }
+    }
+}
