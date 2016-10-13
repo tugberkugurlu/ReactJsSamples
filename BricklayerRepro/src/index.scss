@@ -1,6 +1,15 @@
 .search-results-container {
     margin-top: 20px;
-    
+
+    .cards-list {
+        .card {
+            width: 100%;
+            border: 1px solid #eeeeee;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
     @media(max-width:767px) {
         .bricklayer-column-sizer {
             width: 100%;
