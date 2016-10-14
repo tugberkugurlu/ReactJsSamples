@@ -8,15 +8,41 @@ import loremIpsum from 'lorem-ipsum';
 import _ from 'underscore';
 
 const ItemsList = React.createClass({
+    getInitialState: function() {
+        return {
+            isUpdating: false
+        };
+    },
     componentDidMount: function() {
-        this.itemsListContainerBricklayer = new Bricklayer(this.refs.itemsListContainer);
+        if(!this.state.isUpdating) {
+            this.itemsListContainerBricklayer = new Bricklayer(this.refs.itemsListContainer);
+        }
     },
     componentDidUpdate: function() {
-        this.itemsListContainerBricklayer.destroy();
-        this.itemsListContainerBricklayer = new Bricklayer(this.refs.itemsListContainer);
+        if(!this.state.isUpdating) {
+            this.itemsListContainerBricklayer.destroy();
+            this.itemsListContainerBricklayer = new Bricklayer(this.refs.itemsListContainer);
+        }
+    },
+    componentWillReceiveProps: function() {
+        this.setState({
+            isUpdating: true
+        });
+
+        window.setTimeout(() => {
+            this.setState({
+                isUpdating: false
+            }); 
+        }, 50);
     },
     render: function() {
         const { items } = this.props;
+        const { isUpdating } = this.state;
+        
+        if(isUpdating) {
+            return null;
+        }
+
         return <div className="search-results-container">
             <div className="row">
                 <div className="col-xs-12">
