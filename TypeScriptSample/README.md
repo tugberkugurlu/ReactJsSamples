@@ -7,6 +7,7 @@
 ## Specific TypeScript Features
 
  - [Non-Nullable Types](https://blog.mariusschulz.com/2016/09/27/typescript-2-0-non-nullable-types)
+ - [Discriminated Union](https://basarat.gitbooks.io/typescript/content/docs/types/discriminated-unions.html)
 
 ## Potential Good Reads
 
