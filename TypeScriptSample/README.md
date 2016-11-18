@@ -4,6 +4,9 @@
  - [TypeScript Webpack Loader](https://github.com/TypeStrong/ts-loader)
  - [tsconfig.json reference](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 
+## Specific TypeScript Features
+
+ - [Non-Nullable Types](https://blog.mariusschulz.com/2016/09/27/typescript-2-0-non-nullable-types)
 
 ## Potential Good Reads
 
