@@ -8,6 +8,8 @@
     "build": "node tools/build.js"
   },
   "dependencies": {
+    "@types/react": "^0.14.49",
+    "@types/react-dom": "^0.14.18",
     "bootstrap": "3.3.7",
     "bootswatch": "3.3.7",
     "classnames": "2.2.5",
@@ -19,6 +21,8 @@
     "react-router-redux": "4.0.5",
     "redux": "3.5.2",
     "redux-thunk": "2.1.0",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
     "underscore": "1.8.3",
     "whatwg-fetch": "1.0.0"
   },

@@ -7,12 +7,16 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/index'
+    './src/index.tsx'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'assets/bundle.js',
     publicPath: '/'
+  },
+  resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -24,6 +28,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'src') },
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       { test: /(\.css)$/, loaders: ['style', 'css'] },
       { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
       { test: /\.less$/, loader: 'style!css!less' },

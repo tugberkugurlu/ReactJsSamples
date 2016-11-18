@@ -10,11 +10,15 @@ var GLOBALS = {
 module.exports = {
     debug: true,
     devtool: 'source-map',
-    entry: './src/index',
+    entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'assets/bundle.[hash].js',
         publicPath: '/'
+    },
+    resolve: {
+        // Add '.ts' and '.tsx' as resolvable extensions.
+        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
     devServer: {
         contentBase: './dist'
@@ -33,6 +37,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'src') },
+            { test: /\.tsx?$/, loader: 'ts-loader' },
             { test: /(\.css)$/, loaders: ['style', 'css'] },
             { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
             { test: /\.less$/, loader: 'style!css!less' },
